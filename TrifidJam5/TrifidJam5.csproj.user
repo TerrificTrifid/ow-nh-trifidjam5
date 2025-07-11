@@ -1,0 +1,5 @@
+﻿<Project>
+  <PropertyGroup>
+    <OutputPath>$(AppData)/OuterWildsModManager/OWML/Mods/Trifid.TrifidJam5</OutputPath>
+  </PropertyGroup>
+</Project>
