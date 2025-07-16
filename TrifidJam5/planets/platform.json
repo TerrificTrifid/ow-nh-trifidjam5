@@ -1,0 +1,37 @@
+{
+    "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "Scale Explorer Platform",
+    "starSystem": "Jam5",
+    "Props": {
+        "details": [
+            {
+                "assetBundle": "planets/trifid_jam5",
+                "path": "Assets/Jam5/ScaleExplorerPlatform.prefab",
+                "keepLoaded": true,
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 60
+                }
+            }
+        ],
+        "singularities": [
+            {
+                "type": "blackHole",
+                "uniqueID": "SE_BH",
+                "pairedSingularity": "SE_WH",
+                "horizonRadius": 0.5,
+                "distortRadius": 5,
+                "hasWarpEffects": false,
+                "position": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 60
+                }
+            }
+        ]
+    },
+    "extras": {
+        "isPlatform": true
+    }
+}

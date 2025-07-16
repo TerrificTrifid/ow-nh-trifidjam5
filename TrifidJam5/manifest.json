@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
   "filename": "TrifidJam5.dll",
   "author": "Trifid",
-  "name": "TrifidJam5",
+  "name": "Scale of the Universe",
   "uniqueName": "Trifid.TrifidJam5",
   "version": "0.1.0",
   "owmlVersion": "2.13.0",

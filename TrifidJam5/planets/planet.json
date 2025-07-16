@@ -1,0 +1,54 @@
+{
+    "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "Scale Explorer",
+    "starSystem": "Jam5",
+    "Base": {
+        "surfaceSize": 100,
+        "surfaceGravity": 0,
+        "centerOfSolarSystem": true
+    },
+    /*"Spawn": {
+        "playerSpawn": {
+            "alignRadial": true,
+            "isDefault": true,
+            "position": {
+                "x": 0,
+                "y": 270,
+                "z": 0
+            },
+            "startWithSuit": true
+        },
+        "shipSpawn": {
+            "alignRadial": true,
+            "position": {
+                "x": 0,
+                "y": 270,
+                "z": 0
+            }
+        }
+    },*/
+    "Props": {
+        "details": [
+            {
+                "assetBundle": "planets/trifid_jam5",
+                "path": "Assets/Jam5/ScaleExplorer.prefab",
+                "keepLoaded": true
+            }
+        ],
+        "singularities": [
+            {
+                "type": "whiteHole",
+                "uniqueID": "SE_WH",
+                "pairedSingularity": "SE_BH",
+                "horizonRadius": 0.5,
+                "distortRadius": 5,
+                "hasWarpEffects": false,
+                "position": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 23
+                }
+            }
+        ]
+    }
+}

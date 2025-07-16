@@ -1,3 +1,9 @@
 {
-	"$schema": "https://raw.githubusercontent.com/outer-wilds-new-horizons/new-horizons/main/NewHorizons/Schemas/translation_schema.json"
+	"$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/translation_schema.json",
+	"UIDictionary": {
+
+		"ScaleExplorer_Ascend": "Ascend",
+		"ScaleExplorer_Descend": "Descend"
+
+	}
 }
