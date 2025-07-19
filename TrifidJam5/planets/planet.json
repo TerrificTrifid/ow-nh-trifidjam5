@@ -5,50 +5,57 @@
     "Base": {
         "surfaceSize": 100,
         "surfaceGravity": 0,
+        "showMinimap": false,
         "centerOfSolarSystem": true
     },
-    /*"Spawn": {
-        "playerSpawn": {
-            "alignRadial": true,
-            "isDefault": true,
-            "position": {
-                "x": 0,
-                "y": 270,
-                "z": 0
-            },
-            "startWithSuit": true
-        },
-        "shipSpawn": {
-            "alignRadial": true,
-            "position": {
-                "x": 0,
-                "y": 270,
-                "z": 0
-            }
-        }
-    },*/
+    "Orbit": {
+        "isStatic": true,
+        "primaryBody": "Central Station"
+    },
     "Props": {
         "details": [
             {
                 "assetBundle": "planets/trifid_jam5",
                 "path": "Assets/Jam5/ScaleExplorer.prefab",
-                "keepLoaded": true
+                "keepLoaded": true,
+                "rotation": {
+                    "x": 0,
+                    "y": 180,
+                    "z": 0
+                }
             }
         ],
         "singularities": [
             {
                 "type": "whiteHole",
-                "uniqueID": "SE_WH",
-                "pairedSingularity": "SE_BH",
+                "uniqueID": "SEfromP",
+                "pairedSingularity": "PtoSE",
                 "horizonRadius": 0.5,
-                "distortRadius": 5,
+                "distortRadius": 2,
                 "hasWarpEffects": false,
                 "position": {
-                    "x": 0,
-                    "y": 2,
-                    "z": 23
+                    "x": 6,
+                    "y": 1,
+                    "z": -23
+                }
+            },
+            {
+                "type": "blackHole",
+                "uniqueID": "SEtoP",
+                "pairedSingularity": "PfromSE",
+                "horizonRadius": 0.5,
+                "distortRadius": 2,
+                "hasWarpEffects": false,
+                "position": {
+                    "x": -6,
+                    "y": 1,
+                    "z": -23
                 }
             }
         ]
-    }
+    },
+    "removeChildren": [
+        "Sector/WhiteHole/WhiteHoleAmbience",
+        "Sector/BlackHole/BlackHoleAmbience"
+    ]
 }

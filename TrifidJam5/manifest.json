@@ -6,5 +6,5 @@
   "uniqueName": "Trifid.TrifidJam5",
   "version": "0.1.0",
   "owmlVersion": "2.13.0",
-  "dependencies": ["xen.NewHorizons"]
+  "dependencies": ["xen.NewHorizons", "xen-42.ModJam5"]
 }
