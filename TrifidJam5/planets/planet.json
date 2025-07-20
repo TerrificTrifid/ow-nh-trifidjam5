@@ -54,6 +54,19 @@
             }
         ]
     },
+    "Volumes": {
+        "audioVolumes": [
+            {
+                "track": "music",
+                "audio": "OW_TH_Museum",
+                "radius": 50,
+                "pauseOnFadeOut": true,
+                "loop": true,
+                "fadeSeconds": 3,
+                "volume": 0.5
+            }
+        ]
+    },
     "removeChildren": [
         "Sector/WhiteHole/WhiteHoleAmbience",
         "Sector/BlackHole/BlackHoleAmbience"

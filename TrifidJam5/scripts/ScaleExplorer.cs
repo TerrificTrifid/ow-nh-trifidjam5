@@ -8,13 +8,31 @@ namespace TrifidJam5
     public class ScaleExplorer : MonoBehaviour
     {
         public static ScaleExplorer Instance;
+        public static float InnerExponentThreshold = -2;
+        public static float OuterExponentThreshold = 1;
+        public static float InnerScaleThreshold = Mathf.Pow(10, InnerExponentThreshold);
+        public static float OuterScaleThreshold = Mathf.Pow(10, OuterExponentThreshold);
 
         public OWTriggerVolume Trigger;
-        public Dictionary<int, ScaleLevel> Levels;
-        public bool Activated = false;
-        public int TargetLevel = 0;
+        public ScaleLevel[] Levels;
+        private bool _activated = false;
+        public int TargetExponent = 0;
+        private float _exponent = 0;
+        public float Speed = 1;
+        private bool _shifting = false;
 
-        private float _currentLevel = 0;
+        public TextMesh ExponentText;
+        public TextMesh ScaleText;
+        public Dictionary<int, string> OrdersOfMagnitude;
+
+        public ScaleExplorerMusic Music;
+        public OWAudioSource OneShotSource;
+        public OWAudioSource LoopSource;
+        public AudioClip ActivateSound;
+        public AudioClip DeactivateSound;
+        public AudioClip AscendSound;
+        public AudioClip DescendSound;
+        public AudioClip LevelSound;
 
         public IInputCommands AscendKey = InputLibrary.toolOptionUp;
         public IInputCommands DescendKey = InputLibrary.toolOptionDown;
@@ -33,19 +51,72 @@ namespace TrifidJam5
             _ascendPrompt = new ScreenPrompt(AscendKey, TranslationHandler.GetTranslation("ScaleExplorer_Ascend", TranslationHandler.TextType.UI) + "   <CMD>");
             _descendPrompt = new ScreenPrompt(DescendKey, TranslationHandler.GetTranslation("ScaleExplorer_Descend", TranslationHandler.TextType.UI) + "   <CMD>");
 
-            
-
-            foreach (ScaleLevel level in gameObject.GetComponentsInChildren<ScaleLevel>(true))
+            Levels = gameObject.GetComponentsInChildren<ScaleLevel>(true);
+            foreach (ScaleLevel level in Levels)
             {
-                if (!Levels.TryAdd(level.N, level)) TrifidJam5.Instance.ModHelper.Console.WriteLine(level.name + " didnt work", MessageType.Error);
+                level.gameObject.SetActive(true);
             }
+
+            OrdersOfMagnitude = new Dictionary<int, string>
+            {
+                { -30, "quectometer" },
+                { -27, "rontometer" },
+                { -24, "yoctometer" },
+                { -21, "zeptometer" },
+                { -18, "attometer" },
+                { -15, "femtometer" },
+                { -12, "picometer" },
+                { -10, "angstrom" },
+                { -9, "nanometer" },
+                { -6, "micrometer" },
+                { -3, "millimeter" },
+                { -2, "centimeter" },
+                { 0, "meter" }
+            };
         }
 
         public void Update()
         {
+            if (_activated)
+            {
+                float rate = 0;
+                if (OWInput.IsPressed(AscendKey, InputMode.Character))
+                {
+                    rate += Speed;
+                }
+                if (OWInput.IsPressed(DescendKey, InputMode.Character))
+                {
+                    rate -= Speed;
+                }
 
+                // replace with smoothing
+                if (_shifting && rate == 0)
+                {
+                    _shifting = false;
+                    foreach (ScaleLevel level in Levels)
+                    {
+                        level.ApplyExponent(_exponent);
+                    }
+                    LoopSource.FadeOut(0.25f);
+                }
+                else if (!_shifting && rate != 0)
+                {
+                    _shifting = true;
+                    OneShotSource.PlayOneShot(rate > 0 ? AscendSound : DescendSound);
+                    LoopSource.FadeIn(0.25f);
+                }
 
-            //Locator.GetPromptManager().AddScreenPrompt(_reelInPrompt, PromptPosition.UpperRight, true);
+                if (_shifting)
+                {
+                    _exponent += rate * Time.deltaTime;
+                    foreach (ScaleLevel level in Levels)
+                    {
+                        level.ApplyExponent(_exponent);
+                    }
+                }
+
+                ExponentText.text = _exponent.ToString("0.00");
+            }
         }
 
         private void OnEntry(GameObject hitobj)
@@ -53,7 +124,16 @@ namespace TrifidJam5
             var body = hitobj.GetAttachedOWRigidbody();
             if (!body.CompareTag("Player")) return;
 
-
+            if (!_activated)
+            {
+                _activated = true;
+                ShowPrompts(true);
+                OneShotSource.PlayOneShot(ActivateSound);
+                foreach (ScaleLevel level in Levels)
+                {
+                    level.ApplyExponent(_exponent);
+                }
+            }
         }
 
         private void OnExit(GameObject hitobj)
@@ -61,7 +141,30 @@ namespace TrifidJam5
             var body = hitobj.GetAttachedOWRigidbody();
             if (!body.CompareTag("Player")) return;
 
+            if (_activated)
+            {
+                _activated = false;
+                ShowPrompts(false);
+                OneShotSource.PlayOneShot(DeactivateSound);
+                foreach (ScaleLevel level in Levels)
+                {
+                    level.FadeOut();
+                }
+            }
+        }
 
+        public void ShowPrompts(bool show)
+        {
+            if (show)
+            {
+                Locator.GetPromptManager().AddScreenPrompt(_ascendPrompt, PromptPosition.UpperRight, true);
+                Locator.GetPromptManager().AddScreenPrompt(_descendPrompt, PromptPosition.UpperRight, true);
+            }
+            else
+            {
+                Locator.GetPromptManager().RemoveScreenPrompt(_ascendPrompt, PromptPosition.UpperRight);
+                Locator.GetPromptManager().RemoveScreenPrompt(_descendPrompt, PromptPosition.UpperRight);
+            }
         }
     }
 }

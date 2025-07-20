@@ -22,8 +22,8 @@ namespace TrifidJam5
         public void Update()
         {
             _renderer.material.SetFloat("_Radius", _radius1 * transform.lossyScale.x / _scale);
-            _renderer.material.SetFloat("_MaxDistortRadius", _radius2 * transform.localScale.x);
-            _renderer.material.SetFloat("_DistortFadeDist", _radius3 * transform.localScale.x);
+            _renderer.material.SetFloat("_MaxDistortRadius", _radius2 * transform.lossyScale.x / _scale);
+            _renderer.material.SetFloat("_DistortFadeDist", _radius3 * transform.lossyScale.x / _scale);
         }
     }
 }
