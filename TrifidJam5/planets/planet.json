@@ -65,10 +65,25 @@
                 "fadeSeconds": 3,
                 "volume": 0.5
             }
+        ],
+        "revealVolumes": [
+            {
+                "radius": 10,
+                "revealOn": "enter",
+                "revealFor": "player",
+                "reveals": [
+                    "ScaleExplorerX1",
+                    "ScaleExplorerX2"
+                ]
+            }
         ]
     },
     "removeChildren": [
         "Sector/WhiteHole/WhiteHoleAmbience",
         "Sector/BlackHole/BlackHoleAmbience"
-    ]
+    ],
+    "ShipLog": {
+        "xmlFile": "planets/shiplog.xml",
+        "spriteFolder": "planets"
+    }
 }

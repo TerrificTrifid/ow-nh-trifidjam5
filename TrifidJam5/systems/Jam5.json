@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/star_system_schema.json",
+	"curiosities": [
+		{
+			"id": "ScaleExplorer",
+			"color": {
+				"r": 191,
+				"g": 20,
+				"b": 50,
+				"a": 255
+			},
+			"highlightColor": {
+				"r": 255,
+				"g": 46,
+				"b": 84,
+				"a": 255
+			}
+		}
+	],
+	"entryPositions": [
+		{
+			"id": "ScaleExplorer",
+			"position": {
+				"x": 0,
+				"y": 0
+			}
+		}
+	]
+}

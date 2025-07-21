@@ -1,0 +1,23 @@
+<AstroObjectEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/shiplog_schema.xsd">
+	<ID>Scale Explorer</ID>
+
+	<Entry>
+		<ID>ScaleExplorer</ID>
+		<Name>Scale of the Universe exhibit</Name>
+		<Curiosity>ScaleExplorer</Curiosity>
+		<IsCuriosity />
+
+		<ExploreFact>
+			<ID>ScaleExplorerX1</ID>
+			<Text>A small nomai structure in space. The core of it is a hologram floor that exhibits comparisons of objects in the universe. I don't recognize most of the objects though.</Text>
+		</ExploreFact>
+		
+		<ExploreFact>
+			<ID>ScaleExplorerX2</ID>
+			<Text>It reaches down to a "planck length", and up to the universe itself. I can interact with the exhibit by... thinking about... the numbers 2 and 3.</Text>
+		</ExploreFact>
+
+	</Entry>
+	
+</AstroObjectEntry>

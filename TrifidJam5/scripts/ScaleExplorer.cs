@@ -59,19 +59,30 @@ namespace TrifidJam5
 
             OrdersOfMagnitude = new Dictionary<int, string>
             {
-                { -30, "quectometer" },
-                { -27, "rontometer" },
-                { -24, "yoctometer" },
-                { -21, "zeptometer" },
-                { -18, "attometer" },
-                { -15, "femtometer" },
-                { -12, "picometer" },
-                { -10, "angstrom" },
-                { -9, "nanometer" },
-                { -6, "micrometer" },
-                { -3, "millimeter" },
-                { -2, "centimeter" },
-                { 0, "meter" }
+                { -30, " quectometer" },
+                { -27, " rontometer" },
+                { -24, " yoctometer" },
+                { -21, " zeptometer" },
+                { -18, " attometer" },
+                { -15, " femtometer" },
+                { -12, " picometer" },
+                { -10, " angstrom" },
+                { -9, " nanometer" },
+                //{ -8, " beard-second" },
+                { -6, " micrometer" },
+                { -3, " millimeter" },
+                { -2, " centimeter" },
+                { 0, " meter" },
+                { 3, " kilometer" },
+                //{ 6, " megameter" },
+                { 9, " gigameter" },
+                { 12, " terameter" },
+                { 15, " petameter" },
+                { 18, " exameter" },
+                { 21, " zettameter" },
+                { 24, " yottameter" },
+                { 27, " ronnameter" },
+                { 30, " quettameter" }
             };
         }
 
@@ -115,7 +126,20 @@ namespace TrifidJam5
                     }
                 }
 
-                ExponentText.text = _exponent.ToString("0.00");
+                ExponentText.text = _exponent.ToString("0.0");
+                int exp = Mathf.FloorToInt(_exponent);
+                while (exp > -30 && !OrdersOfMagnitude.ContainsKey(exp))
+                {
+                    exp--;
+                }
+                if (OrdersOfMagnitude.TryGetValue(exp, out string unit))
+                {
+                    ScaleText.text = Mathf.Pow(10, _exponent - exp).ToString("0.0") + unit + "s";
+                }
+                else
+                {
+                    ScaleText.text = "0";
+                }
             }
         }
 
