@@ -55,6 +55,19 @@
                     "z": -30
                 }
             }
+        ],
+        "dialogue": [
+            {
+                "radius": 1,
+                "xmlFile": "planets/peelnesto.xml",
+                "isRelativeToParent": true,
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "pathToAnimController": "Sector/ScaleExplorer/Core/0 1m/PeelP50/Peelnesto"
+            }
         ]
     },
     "Volumes": {

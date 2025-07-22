@@ -1,0 +1,14 @@
+<DialogueTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/dialogue_schema.xsd">	
+	<NameField>Peelnesto</NameField>
+	
+	<DialogueNode>
+		<Name>guh</Name>
+		<EntryCondition>DEFAULT</EntryCondition>
+		<Dialogue>
+			<Page>Hey it's me Peelnesto the magic talking anglerfish.</Page>
+			<Page>If you think about <![CDATA[<color=orange>[2]</color>]]> and <![CDATA[<color=orange>[3]</color>]]>, something crazy will happen!</Page>
+			<Page><![CDATA[<size=60>A</size>]]><![CDATA[<size=59>A</size>]]><![CDATA[<size=58>A</size>]]><![CDATA[<size=57>A</size>]]><![CDATA[<size=56>A</size>]]><![CDATA[<size=55>A</size>]]><![CDATA[<size=54>A</size>]]><![CDATA[<size=53>A</size>]]><![CDATA[<size=52>A</size>]]><![CDATA[<size=51>A</size>]]><![CDATA[<size=50>A</size>]]><![CDATA[<size=49>A</size>]]><![CDATA[<size=48>A</size>]]><![CDATA[<size=47>A</size>]]><![CDATA[<size=46>A</size>]]><![CDATA[<size=45>A</size>]]><![CDATA[<size=44>A</size>]]><![CDATA[<size=43>A</size>]]><![CDATA[<size=42>A</size>]]><![CDATA[<size=41>A</size>]]><![CDATA[<size=40>A</size>]]><![CDATA[<size=39>A</size>]]><![CDATA[<size=38>A</size>]]><![CDATA[<size=37>A</size>]]><![CDATA[<size=36>A</size>]]><![CDATA[<size=35>A</size>]]><![CDATA[<size=34>A</size>]]><![CDATA[<size=33>A</size>]]><![CDATA[<size=32>A</size>]]><![CDATA[<size=31>A</size>]]><![CDATA[<size=30>A</size>]]><![CDATA[<size=29>A</size>]]><![CDATA[<size=28>A</size>]]><![CDATA[<size=27>A</size>]]><![CDATA[<size=26>A</size>]]><![CDATA[<size=25>A</size>]]><![CDATA[<size=24>A</size>]]><![CDATA[<size=23>A</size>]]><![CDATA[<size=22>A</size>]]><![CDATA[<size=21>A</size>]]><![CDATA[<size=20>A</size>]]><![CDATA[<size=19>A</size>]]><![CDATA[<size=18>A</size>]]><![CDATA[<size=17>A</size>]]><![CDATA[<size=16>A</size>]]><![CDATA[<size=15>A</size>]]><![CDATA[<size=14>A</size>]]><![CDATA[<size=13>A</size>]]><![CDATA[<size=12>A</size>]]><![CDATA[<size=11>A</size>]]></Page>
+		</Dialogue>
+	</DialogueNode>
+
+</DialogueTree>
