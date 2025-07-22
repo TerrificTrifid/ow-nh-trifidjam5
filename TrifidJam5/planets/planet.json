@@ -1,12 +1,15 @@
 {
     "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/body_schema.json",
-    "name": "Scale Explorer",
+    "name": "Scale Exhibit",
     "starSystem": "Jam5",
     "Base": {
         "surfaceSize": 100,
         "surfaceGravity": 0,
         "showMinimap": false,
         "centerOfSolarSystem": true
+    },
+    "ReferenceFrame": {
+        "enabled": true
     },
     "Orbit": {
         "isStatic": true,
@@ -36,7 +39,7 @@
                 "position": {
                     "x": 6,
                     "y": 1,
-                    "z": -23
+                    "z": -30
                 }
             },
             {
@@ -49,7 +52,7 @@
                 "position": {
                     "x": -6,
                     "y": 1,
-                    "z": -23
+                    "z": -30
                 }
             }
         ]
@@ -63,7 +66,7 @@
                 "pauseOnFadeOut": true,
                 "loop": true,
                 "fadeSeconds": 3,
-                "volume": 0.5
+                "volume": 0.3
             }
         ],
         "revealVolumes": [
@@ -84,6 +87,9 @@
     ],
     "ShipLog": {
         "xmlFile": "planets/shiplog.xml",
-        "spriteFolder": "planets"
+        "spriteFolder": "planets",
+        "mapMode": {
+            "remove": true
+        }
     }
 }
