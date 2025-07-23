@@ -1,5 +1,9 @@
 # Scale of the Universe
 ![image](https://github.com/user-attachments/assets/4cc46759-dbb7-4dea-a58a-331f960724c2)
+![Current version](https://img.shields.io/github/manifest-json/v/TerrificTrifid/ow-nh-trifidjam5?color=gree&filename=TrifidJam5/manifest.json)
+![Downloads](https://img.shields.io/github/downloads/TerrificTrifid/ow-nh-trifidjam5/total)
+![Downloads of newest version](https://img.shields.io/github/downloads/TerrificTrifid/ow-nh-trifidjam5/latest/total)
+
 An interactive exhibit of our real universe, as an entry in jam 5. This current state is of patchy quality, but is hopefully still enjoyable to explore.
 Press 2 and 3 to ascend and descend the scale.
 
