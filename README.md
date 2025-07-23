@@ -1,5 +1,5 @@
 # Scale of the Universe
-<img width="1920" height="640" alt="Screenshot 2025-07-21 031502" src="https://github.com/user-attachments/assets/4b116ff2-0435-4880-8aba-6e779e1cf5c2" />
+![image](https://github.com/user-attachments/assets/4cc46759-dbb7-4dea-a58a-331f960724c2)
 An interactive exhibit of our real universe, as an entry in jam 5. This current state is of patchy quality, but is hopefully still enjoyable to explore.
 Press 2 and 3 to ascend and descend the scale.
 
