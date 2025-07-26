@@ -12,6 +12,8 @@ namespace TrifidJam5
         public static float OuterExponentThreshold = 1;
         public static float InnerScaleThreshold = Mathf.Pow(10, InnerExponentThreshold);
         public static float OuterScaleThreshold = Mathf.Pow(10, OuterExponentThreshold);
+        public static float MinExponent = -35;
+        public static float MaxExponent = 26;
 
         public OWTriggerVolume Trigger;
         public ScaleLevel[] Levels;
@@ -24,6 +26,7 @@ namespace TrifidJam5
         public TextMesh ExponentText;
         public TextMesh ScaleText;
         public Dictionary<int, string> OrdersOfMagnitude;
+        public Dictionary<int, string> OrdersOfMagnitude2;
 
         public ScaleExplorerMusic Music;
         public OWAudioSource OneShotSource;
@@ -59,30 +62,44 @@ namespace TrifidJam5
 
             OrdersOfMagnitude = new Dictionary<int, string>
             {
-                { -30, " quectometer" },
-                { -27, " rontometer" },
-                { -24, " yoctometer" },
-                { -21, " zeptometer" },
-                { -18, " attometer" },
-                { -15, " femtometer" },
-                { -12, " picometer" },
-                { -10, " angstrom" },
-                { -9, " nanometer" },
-                //{ -8, " beard-second" },
-                { -6, " micrometer" },
-                { -3, " millimeter" },
-                { -2, " centimeter" },
-                { 0, " meter" },
-                { 3, " kilometer" },
-                //{ 6, " megameter" },
-                { 9, " gigameter" },
-                { 12, " terameter" },
-                { 15, " petameter" },
-                { 18, " exameter" },
-                { 21, " zettameter" },
-                { 24, " yottameter" },
-                { 27, " ronnameter" },
-                { 30, " quettameter" }
+                { -30, " quectometers" },
+                { -27, " rontometers" },
+                { -24, " yoctometers" },
+                { -21, " zeptometers" },
+                { -18, " attometers" },
+                { -15, " femtometers" },
+                { -12, " picometers" },
+                { -10, " angstroms" },
+                { -9, " nanometers" },
+                //{ -8, " beard-seconds" },
+                { -6, " micrometers" },
+                { -3, " millimeters" },
+                { -2, " centimeters" },
+                { 0, " meters" },
+                { 3, " kilometers" },
+                //{ 6, " megameters" },
+                { 9, " gigameters" },
+                { 12, " terameters" },
+                { 15, " petameters" },
+                { 18, " exameters" },
+                { 21, " zettameters" },
+                { 24, " yottameters" },
+                { 27, " ronnameters" },
+                { 30, " quettameters" }
+            };
+            OrdersOfMagnitude2 = new Dictionary<int, string>
+            {
+                { -5, " twips" },
+                { -4, " thou" },
+                { -3, " barleycorns" },
+                { -2, " inches" },
+                { -1, " hands" },
+                { 0, " feet" },
+                { 1, " yards" },
+                { 2, " chains" },
+                { 3, " furlongs" },
+                { 4, " miles" },
+                { 5, " leagues" },
             };
         }
 
@@ -91,11 +108,11 @@ namespace TrifidJam5
             if (_activated)
             {
                 float rate = 0;
-                if (OWInput.IsPressed(AscendKey, InputMode.Character))
+                if (OWInput.IsPressed(AscendKey, InputMode.Character) && _exponent < MaxExponent)
                 {
                     rate += Speed;
                 }
-                if (OWInput.IsPressed(DescendKey, InputMode.Character))
+                if (OWInput.IsPressed(DescendKey, InputMode.Character) && _exponent > MinExponent)
                 {
                     rate -= Speed;
                 }
@@ -120,6 +137,8 @@ namespace TrifidJam5
                 if (_shifting)
                 {
                     _exponent += rate * Time.deltaTime;
+                    _exponent = Mathf.Max(_exponent, MinExponent);
+                    _exponent = Mathf.Min(_exponent, MaxExponent);
                     foreach (ScaleLevel level in Levels)
                     {
                         level.ApplyExponent(_exponent);
@@ -127,18 +146,15 @@ namespace TrifidJam5
                 }
 
                 ExponentText.text = _exponent.ToString("0.0");
-                int exp = Mathf.FloorToInt(_exponent);
-                while (exp > -30 && !OrdersOfMagnitude.ContainsKey(exp))
+
+                float n = LengthInUnits(_exponent, out string unit, false);
+                if (string.IsNullOrEmpty(unit))
                 {
-                    exp--;
-                }
-                if (OrdersOfMagnitude.TryGetValue(exp, out string unit))
-                {
-                    ScaleText.text = Mathf.Pow(10, _exponent - exp).ToString("0.0") + unit + "s";
+                    ScaleText.text = "Out of metric scale";
                 }
                 else
                 {
-                    ScaleText.text = "0";
+                    ScaleText.text = n.ToString("0.0") + unit;
                 }
             }
         }
@@ -189,6 +205,36 @@ namespace TrifidJam5
                 Locator.GetPromptManager().RemoveScreenPrompt(_ascendPrompt, PromptPosition.UpperRight);
                 Locator.GetPromptManager().RemoveScreenPrompt(_descendPrompt, PromptPosition.UpperRight);
             }
+        }
+
+        public float LengthInUnits(float exponent, out string unit, bool imperial = false)
+        {
+            float n = 0;
+            unit = ""; 
+            if (imperial)
+            {
+
+            }
+            else
+            {
+                int exp = Mathf.FloorToInt(exponent);
+                while (exp >= MinExponent && !OrdersOfMagnitude.ContainsKey(exp))
+                {
+                    exp--;
+                }
+                if (OrdersOfMagnitude.TryGetValue(exp, out unit))
+                {
+                    n = Mathf.Pow(10, exponent - exp);
+                }
+            }
+            return n;
+        }
+
+        public enum LengthUnits
+        {
+            Metric,
+            Imperial,
+            Natural
         }
     }
 }

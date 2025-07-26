@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/body_schema.json",
-    "name": "Scale Exhibit",
+    "name": "Scale of the Universe Exhibit",
     "starSystem": "Jam5",
     "Base": {
         "surfaceSize": 100,
@@ -9,6 +9,10 @@
         "centerOfSolarSystem": true
     },
     "ReferenceFrame": {
+        "enabled": true,
+        "targetWhenClose": true
+    },
+    "MapMarker": {
         "enabled": true
     },
     "Orbit": {

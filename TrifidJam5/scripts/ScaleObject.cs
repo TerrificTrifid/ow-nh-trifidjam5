@@ -79,6 +79,8 @@ namespace TrifidJam5
         {
             gameObject.SetActive(true);
             _fade = false;
+            transform.localPosition = new Vector3(_direction.x * _localRadius, 0, _direction.y * _localRadius);
+            transform.localScale = Vector3.one * _localScale * _fadeT;
         }
 
         public void FadeOut()
