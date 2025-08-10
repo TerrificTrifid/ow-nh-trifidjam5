@@ -24,9 +24,12 @@ namespace TrifidJam5
         private bool _shifting = false;
 
         public TextMesh ExponentText;
-        public TextMesh ScaleText;
+        public TextMesh MetricScaleText;
+        public TextMesh ImperialScaleText;
+        public TextMesh NaturalScaleText;
         public Dictionary<int, string> OrdersOfMagnitude;
         public Dictionary<int, string> OrdersOfMagnitude2;
+        public Dictionary<int, string> OrdersOfMagnitude3;
 
         public ScaleExplorerMusic Music;
         public OWAudioSource OneShotSource;
@@ -99,7 +102,19 @@ namespace TrifidJam5
                 { 2, " chains" },
                 { 3, " furlongs" },
                 { 4, " miles" },
-                { 5, " leagues" },
+                //{ 5, " leagues" },
+            };
+            OrdersOfMagnitude3 = new Dictionary<int, string>
+            {
+                { -2, " Planck lengths" },
+                { -1, " ears" },
+                { 0, " smoots" },
+                { 1, " Olympic pools" },
+                { 2, " earth radii" },
+                { 3, " solar radii" },
+                { 4, " au" },
+                { 5, " light-years" },
+                { 6, " megalight-years" },
             };
         }
 
@@ -150,11 +165,11 @@ namespace TrifidJam5
                 float n = LengthInUnits(_exponent, out string unit, false);
                 if (string.IsNullOrEmpty(unit))
                 {
-                    ScaleText.text = "Out of metric scale";
+                    MetricScaleText.text = "Out of metric scale";
                 }
                 else
                 {
-                    ScaleText.text = n.ToString("0.0") + unit;
+                    MetricScaleText.text = n.ToString("0.0") + unit;
                 }
             }
         }

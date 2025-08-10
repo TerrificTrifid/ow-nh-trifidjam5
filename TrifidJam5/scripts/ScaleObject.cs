@@ -13,11 +13,21 @@ namespace TrifidJam5
         private float _localRadius;
         private float _localScale;
 
+        private Light[] _lights;
+        private float[] _lightRanges;
+
         public void Awake()
         {
             Vector2 position = new Vector2(transform.localPosition.x, transform.localPosition.z);
             _direction = position.normalized;
             _radius = position.magnitude;
+
+            _lights = GetComponentsInChildren<Light>();
+            _lightRanges = new float[_lights.Length];
+            for (int i = 0; i < _lights.Length; i++)
+            {
+                _lightRanges[i] = _lights[i].range;
+            }
         }
 
         public void Start()
@@ -47,8 +57,7 @@ namespace TrifidJam5
                 }
             }
 
-            transform.localPosition = new Vector3(_direction.x * _localRadius, 0, _direction.y * _localRadius);
-            transform.localScale = Vector3.one * _localScale * _fadeT;
+            ApplyScaling();
         }
 
         public void ApplyRelativeExponent(float exp)
@@ -75,12 +84,25 @@ namespace TrifidJam5
             }
         }
 
+        public void ApplyScaling()
+        {
+            transform.localPosition = new Vector3(_direction.x * _localRadius, 0, _direction.y * _localRadius);
+            transform.localScale = Vector3.one * _localScale * _fadeT;
+
+            if (_lights.Length > 0)
+            {
+                for (int i = 0; i < _lights.Length; i++)
+                {
+                    _lights[i].range = _lightRanges[i] * _localScale * _fadeT;
+                }
+            }
+        }
+
         public void FadeIn()
         {
             gameObject.SetActive(true);
             _fade = false;
-            transform.localPosition = new Vector3(_direction.x * _localRadius, 0, _direction.y * _localRadius);
-            transform.localScale = Vector3.one * _localScale * _fadeT;
+            ApplyScaling();
         }
 
         public void FadeOut()
