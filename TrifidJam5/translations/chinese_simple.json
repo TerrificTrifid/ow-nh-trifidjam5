@@ -1,0 +1,33 @@
+{
+
+  "UIDictionary": {
+
+    "ScaleExplorer_Ascend": "升高",
+    "ScaleExplorer_Descend": "降低",
+
+    "Scale of the Universe Exhibit": "宇宙尺度展览"
+  }, //ui翻译，如地图模式中各行星的名字，信号枪中各种信号的名字
+
+  "DialogueDictionary": {
+    //peelnesto.xml
+    "Peelnesto": "皮尔内斯托",
+    "Hey it's me Peelnesto the magic talking anglerfish.": "嘿，我是会说话的魔法鮟鱇鱼皮尔内斯托。",
+    "If you think about <![CDATA[<color=orange>[2]</color>]]> and <![CDATA[<color=orange>[3]</color>]]>, something crazy will happen!": "如果你思考<![CDATA[<color=orange>[2]</color>]]>和<![CDATA[<color=orange>[3]</color>]]>的话，疯狂的事情就会发生！",
+    "<![CDATA[<size=60>A</size>]]><![CDATA[<size=59>A</size>]]><![CDATA[<size=58>A</size>]]><![CDATA[<size=57>A</size>]]><![CDATA[<size=56>A</size>]]><![CDATA[<size=55>A</size>]]><![CDATA[<size=54>A</size>]]><![CDATA[<size=53>A</size>]]><![CDATA[<size=52>A</size>]]><![CDATA[<size=51>A</size>]]><![CDATA[<size=50>A</size>]]><![CDATA[<size=49>A</size>]]><![CDATA[<size=48>A</size>]]><![CDATA[<size=47>A</size>]]><![CDATA[<size=46>A</size>]]><![CDATA[<size=45>A</size>]]><![CDATA[<size=44>A</size>]]><![CDATA[<size=43>A</size>]]><![CDATA[<size=42>A</size>]]><![CDATA[<size=41>A</size>]]><![CDATA[<size=40>A</size>]]><![CDATA[<size=39>A</size>]]><![CDATA[<size=38>A</size>]]><![CDATA[<size=37>A</size>]]><![CDATA[<size=36>A</size>]]><![CDATA[<size=35>A</size>]]><![CDATA[<size=34>A</size>]]><![CDATA[<size=33>A</size>]]><![CDATA[<size=32>A</size>]]><![CDATA[<size=31>A</size>]]><![CDATA[<size=30>A</size>]]><![CDATA[<size=29>A</size>]]><![CDATA[<size=28>A</size>]]><![CDATA[<size=27>A</size>]]><![CDATA[<size=26>A</size>]]><![CDATA[<size=25>A</size>]]><![CDATA[<size=24>A</size>]]><![CDATA[<size=23>A</size>]]><![CDATA[<size=22>A</size>]]><![CDATA[<size=21>A</size>]]><![CDATA[<size=20>A</size>]]><![CDATA[<size=19>A</size>]]><![CDATA[<size=18>A</size>]]><![CDATA[<size=17>A</size>]]><![CDATA[<size=16>A</size>]]><![CDATA[<size=15>A</size>]]><![CDATA[<size=14>A</size>]]><![CDATA[<size=13>A</size>]]><![CDATA[<size=12>A</size>]]><![CDATA[<size=11>A</size>]]>": "<![CDATA[<size=60>啊</size>]]><![CDATA[<size=59>啊</size>]]><![CDATA[<size=58>啊</size>]]><![CDATA[<size=57>啊</size>]]><![CDATA[<size=56>啊</size>]]><![CDATA[<size=55>啊</size>]]><![CDATA[<size=54>啊</size>]]><![CDATA[<size=53>啊</size>]]><![CDATA[<size=52>啊</size>]]><![CDATA[<size=51>啊</size>]]><![CDATA[<size=50>啊</size>]]><![CDATA[<size=49>啊</size>]]><![CDATA[<size=48>啊</size>]]><![CDATA[<size=47>啊</size>]]><![CDATA[<size=46>啊</size>]]><![CDATA[<size=45>啊</size>]]><![CDATA[<size=44>啊</size>]]><![CDATA[<size=43>啊</size>]]><![CDATA[<size=42>啊</size>]]><![CDATA[<size=41>啊</size>]]><![CDATA[<size=40>啊</size>]]><![CDATA[<size=39>啊</size>]]><![CDATA[<size=38>啊</size>]]><![CDATA[<size=37>啊</size>]]><![CDATA[<size=36>啊</size>]]><![CDATA[<size=35>啊</size>]]><![CDATA[<size=34>啊</size>]]><![CDATA[<size=33>啊</size>]]><![CDATA[<size=32>啊</size>]]><![CDATA[<size=31>啊</size>]]><![CDATA[<size=30>啊</size>]]><![CDATA[<size=29>啊</size>]]><![CDATA[<size=28>啊</size>]]><![CDATA[<size=27>啊</size>]]><![CDATA[<size=26>啊</size>]]><![CDATA[<size=25>啊</size>]]><![CDATA[<size=24>啊</size>]]><![CDATA[<size=23>啊</size>]]><![CDATA[<size=22>啊</size>]]><![CDATA[<size=21>啊</size>]]><![CDATA[<size=20>啊</size>]]><![CDATA[<size=19>啊</size>]]><![CDATA[<size=18>啊</size>]]><![CDATA[<size=17>啊</size>]]><![CDATA[<size=16>啊</size>]]><![CDATA[<size=15>啊</size>]]><![CDATA[<size=14>啊</size>]]><![CDATA[<size=13>啊</size>]]><![CDATA[<size=12>啊</size>]]><![CDATA[<size=11>啊</size>]]>"
+  }, //对话翻译，如挪麦文字、录音机、人物对话等，还有角色的名字也要放在这里
+
+  "ShipLogDictionary": {
+    //shiplog.xml
+    "Scale of the Universe exhibit": "宇宙尺度展览",
+    "A small nomai structure in space. The core of it is a hologram floor that exhibits comparisons of objects in the universe. I don't recognize most of the objects though.": "太空中的一个小型挪麦建筑。它的核心是一个展示宇宙物体尺度的全息地板。不过大多数物体我都不认识。",
+    "It reaches down to a \"planck length\", and up to the universe itself. I can interact with the exhibit by... thinking about... [2] and [3].": "它向下至到“普朗克长度”，向上至宇宙本身。我可以通过...思考...[2]和[3]来与展品互动。"
+
+
+
+  }, //飞船日志翻译，飞船日志中的各种信息
+
+  "AchievementTranslations": {
+
+
+  } //成就翻译（需下载Achievement+）
+}
